@@ -1,0 +1,27 @@
+{
+    "name": "Node.js",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20",
+    "postCreateCommand": "npm install",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+    "forwardPorts": [
+        4321
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "eamodio.gitlens",
+                "teabyii.ayu",
+                "vscode-icons-team.vscode-icons",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "Vue.volar",
+                "astro-build.astro-vscode"
+            ]
+        }
+    }
+}
