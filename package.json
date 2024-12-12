@@ -1,12 +1,17 @@
 {
   "name": "scirats",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.2",
+    "@astrojs/rss": "^4.0.10",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.0.5"
+  }
 }
