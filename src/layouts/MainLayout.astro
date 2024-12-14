@@ -1,0 +1,31 @@
+---
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="h-screen flex flex-col p-[16px] bg-neutral-100">
+    <header class="flex justify-between py-[12px]">
+      <div>[logo]</div>
+      <ul class="flex space-x-[24px] text-base font-bold">
+        <li class="cursor-pointer rounded-xl px-[16px] py-[2px] bg-gray-300">
+          Home
+        </li>
+        <li class="cursor-pointer">Projects</li>
+      </ul>
+      <div>[switch]</div>
+    </header>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>
