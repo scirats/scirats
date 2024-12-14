@@ -1,10 +1,20 @@
 <script lang="ts" setup>
+import useReadme from '@composables/readme.composable';
 import useLastProjects from '@composables/last-projects.composable';
 
-const { projects, refetch } = useLastProjects()
+const args = "scirats"
+
+const { projects } = useLastProjects()
+const { raw } = useReadme(args)
 </script>
 
 <template>
+    <div>
+        <div>sample content</div>
+        <div>
+            {{ raw }}
+        </div>
+    </div>
     <footer class="px-[12px] flex justify-center">
         <ul class="flex space-x-[24px]">
             <li v-for="item in projects"
