@@ -4,8 +4,10 @@ import LastProjects from "@components/vue/LastProjects.vue";
 ---
 
 <MainLayout title="home">
-  <div>[content]</div>
-  <Fragment slot="footer">
+  <div class="mx-[-16px]">
+    <img src="/images/hero.png" alt="hero" />
     <LastProjects client:only="vue" />
+  </div>
+  <Fragment slot="footer">
   </Fragment>
 </MainLayout>

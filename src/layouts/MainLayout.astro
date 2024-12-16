@@ -1,4 +1,6 @@
 ---
+import Header from "@components/astro/Header.astro";
+
 type Props = {
   title: string;
 };
@@ -10,19 +12,11 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/logo.svg">
     <title>{title}</title>
   </head>
-  <body class="h-screen flex flex-col p-[16px] bg-neutral-100">
-    <header class="flex justify-between py-[12px]">
-      <div>[logo]</div>
-      <ul class="flex space-x-[24px] text-base font-bold">
-        <li class="cursor-pointer rounded-xl px-[16px] py-[2px] bg-gray-300">
-          Home
-        </li>
-        <li class="cursor-pointer">Projects</li>
-      </ul>
-      <div>[switch]</div>
-    </header>
+  <body class="h-screen flex flex-col px-[16px] bg-[#1B191A]">
+    <Header />
     <main class="flex-1">
       <slot />
     </main>
