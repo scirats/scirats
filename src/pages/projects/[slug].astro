@@ -1,6 +1,7 @@
 ---
 import { marked } from 'marked';
 import MainLayout from "@layouts/MainLayout.astro";
+import Prose from "@components/astro/Prose.astro";
 
 export const prerender = false;
 
@@ -12,5 +13,7 @@ const content = marked.parse(markdown);
 ---
 
 <MainLayout title="slug">
-  <article set:html={content} />
+  <Prose>
+    <article set:html={content} />
+  </Prose>
 </MainLayout>
