@@ -10,7 +10,7 @@ const { projects } = useLastProjects()
     <footer class="px-[12px] flex justify-center">
         <ul class="flex space-x-[24px]">
             <li v-for="item in projects">
-                <a :href="item.html_url" target="_blank"
+              <a :href="`/projects/${item.name}`"
                     class="p-[16px] flex flex-col space-y-[8px] rounded-md border border-gray-300 cursor-pointer bg-[#FDFAEB]">
                     <div class="flex items-center text-base font-bold">
                         <div class="w-[12px]">
