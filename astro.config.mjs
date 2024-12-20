@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
-import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 
 export default defineConfig({
   site: "https://scirats.com",
@@ -24,7 +24,5 @@ export default defineConfig({
     },
   },
 
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: netlify(),
 });
