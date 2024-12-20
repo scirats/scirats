@@ -1,12 +1,19 @@
 ---
+import { marked } from 'marked';
 import MainLayout from "@layouts/MainLayout.astro";
+import Prose from "@components/astro/Prose.astro";
 
-export const getStaticPaths = async (context) => {
-  return [{ params: { slug: "sample" }, props: { data: "aaaa" } }];
-};
+export const prerender = false;
 
 const { slug } = Astro.params;
-const { data } = Astro.props;
+
+const response = await fetch(`https://raw.githubusercontent.com/scirats/${slug}/master/readme.md`);
+const markdown = await response.text();
+const content = marked.parse(markdown);
 ---
 
-<MainLayout title={slug}> {data} </MainLayout>
+<MainLayout title="slug">
+  <Prose>
+    <article set:html={content} />
+  </Prose>
+</MainLayout>
